@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Prompt ++</title>
+</head>
+<body>
+    <div>
+        <div>
+            <a href="index.html"><h3>← Back to DevMate</h3></a>
+        </div>
+        <div>
+            <h1>Prompt ++</h1>
+            <div>
+                <h3>Enter your prompt: </h3>
+                <textarea id="userPrompt" rows="7" cols="70"></textarea>
+            </div>
+            <div>
+                <h3>Category: </h3>
+                <select id="category">
+                    <option selected="true">Select your Category</option>
+                    <option>Coding</option>
+                    <option>Writing</option>
+                    <option>Research</option>
+                    <option>Image Generation</option>
+                </select>
+            </div>
+            <div>
+                <button onclick="optimizePrompt()" id="optimizeBtn">Optimize Prompt</button>
+            </div>
+        </div>
+        <div>
+            <hr>
+            <h3>Optimized Prompt: </h3>
+            <textarea id="optimizedPrompt" rows="7" cols="70"></textarea>
+            <div></div>
+            <hr>
+        </div>
+        <div id="changes">
+            <h3>Changes Made</h3>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
