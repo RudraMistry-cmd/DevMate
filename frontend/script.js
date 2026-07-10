@@ -4,6 +4,10 @@ function optimizePrompt(){
     const optimizedPrompt = document.getElementById("optimizedPrompt")
     const changesDiv = document.getElementById("changes");
     changesDiv.innerHTML = "";
+    const optimizeBtn = document.getElementById("optimizeBtn");
+
+    optimizeBtn.disabled = true;
+    optimizeBtn.textContent = "Optimizing...";
 
     if(userPrompt != "" && category != "Select your Category"){
         fetch("http://127.0.0.1:8000/optimize", {
@@ -34,6 +38,9 @@ function optimizePrompt(){
             }
 
         });
+        optimizeBtn.disabled = false;
+        optimizeBtn.textContent = "Optimize Prompt";
+
     }else{
         alert("Please enter a prompt and select a valid category.")
     }
