@@ -10,22 +10,28 @@
     <main class="container">
         <header>
             <a href="index.html"><h3>← Back to DevMate</h3></a>
-            <h1>Prompt ++</h1>
+            <h1>Prompt ++ | DevMate</h1>
             <p>
                 Optimize prompts using your local AI model.
             </p>
         </header>
         <section class="input-section">
             <h3>Enter your prompt: </h3>
-            <textarea id="userPrompt" rows="7" cols="70"></textarea>
+            <textarea id="userPrompt" placeholder="Describe what you want AI to help you with..."></textarea>
             <div>
                 <h3>Category: </h3>
                 <select id="category">
-                    <option selected="true">Select your Category</option>
+                    <option selected>Select your Category</option>
+                    <option>General</option>
                     <option>Coding</option>
                     <option>Writing</option>
                     <option>Research</option>
                     <option>Image Generation</option>
+                    <option>Resume & Career</option>
+                    <option>Marketing</option>
+                    <option>Email</option>
+                    <option>Social Media</option>
+                    <option>Business</option>
                 </select>
             </div>
             <div>
@@ -34,9 +40,10 @@
         </section>
         <section class="output-section">
             <h3>Optimized Prompt: </h3>
-            <textarea id="optimizedPrompt"></textarea>
+            <textarea id="optimizedPrompt" placeholder="Your optimized prompt will appear here..." readonly></textarea>
             <div></div>
             <h3>Changes Made</h3>
+            <div id="changes"></div>
         </section>
     </main>
     <script src="script.js"></script>

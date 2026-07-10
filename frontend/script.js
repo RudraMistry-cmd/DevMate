@@ -3,7 +3,7 @@ function optimizePrompt(){
     const category = document.getElementById("category").value
     const optimizedPrompt = document.getElementById("optimizedPrompt")
     const changesDiv = document.getElementById("changes");
-    changesDiv.innerHTML = "";
+    changesDiv.innerHTML = " ";
     const optimizeBtn = document.getElementById("optimizeBtn");
 
     optimizeBtn.disabled = true;
@@ -28,18 +28,27 @@ function optimizePrompt(){
             changesDiv.innerHTML = "";
 
             for (const change of data.changes) {
-
                 const changeElement = document.createElement("p");
-
                 changeElement.textContent = change;
-
                 changesDiv.appendChild(changeElement);
-
             }
 
+            // 👇 Move these HERE
+            optimizeBtn.disabled = false;
+            optimizeBtn.textContent = "Optimize Prompt";
+
+        })
+        .catch(error => {
+
+            console.error(error);
+
+            alert("Unable to connect to local AI.");
+
+            // 👇 And also HERE
+            optimizeBtn.disabled = false;
+            optimizeBtn.textContent = "Optimize Prompt";
+
         });
-        optimizeBtn.disabled = false;
-        optimizeBtn.textContent = "Optimize Prompt";
 
     }else{
         alert("Please enter a prompt and select a valid category.")

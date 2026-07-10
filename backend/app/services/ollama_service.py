@@ -1,27 +1,12 @@
+import json
 from ollama import Client
 from app.config import OLLAMA_MODEL, OLLAMA_URL
+from app.prompts.system_prompts import SYSTEM_PROMPTS
 
 client = Client(host=OLLAMA_URL)
 
 def optimize_prompt(user_prompt, category):
-    system_prompt = f"""
-You are Prompt++.
-
-Rewrite prompts professionally.
-
-Always:
-
-- Improve clarity
-- Remove ambiguity
-- Add missing context
-- Preserve original intent
-- Produce structured prompts
-
-Never explain.
-Never chat.
-Return ONLY the optimized prompt.
-"""
-
+    system_prompt = SYSTEM_PROMPTS.get(category, SYSTEM_PROMPTS["General"])
     response = client.chat(
         model=OLLAMA_MODEL,
         messages=[
@@ -36,11 +21,8 @@ Return ONLY the optimized prompt.
         ]
     )
 
-    optimized = response["message"]["content"]
+    content = response["message"]["content"]
 
-    return {
-        "optimized_prompt": optimized,
-        "changes": [
-            "Prompt optimized using local AI."
-        ]
-    }
+    parsed = json.loads(content)
+
+    return parsed
