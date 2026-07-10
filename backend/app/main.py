@@ -1,5 +1,7 @@
 from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
+from app.services.ollama_service import optimize_prompt
+from app.models.prompts_model import PromptRequest
 
 app = FastAPI()
 
@@ -18,12 +20,9 @@ def home():
     }
 
 @app.post("/optimize")
-def optimize():
-    return {
-        "optimized_prompt": "This is a dummy optimized prompt.",
-        "changes": [
-            "Added context",
-            "Improved clarity",
-            "Specified output format"
-        ]
-    }
+def optimize(request: PromptRequest):
+    result = optimize_prompt(
+        request.user_prompt,
+        request.category
+    )
+    return result
