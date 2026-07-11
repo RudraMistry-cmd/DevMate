@@ -1,4 +1,11 @@
-def generate_readme(request):
+import json
+from ollama import Client
+from app.config import OLLAMA_MODEL, OLLAMA_URL
+from app.prompts.system_prompts import README_PROMPT
+
+client = Client(host=OLLAMA_URL)
+
+def build_readme(request):
 
     readme = f"""# {request.project_name}
 
@@ -40,6 +47,38 @@ def generate_readme(request):
 {request.license}
 """
 
-    return {
-        "readme": readme
-    }
+    return readme
+
+def improve_readme(request):
+    raw_readme = build_readme(request)
+    prompt = f"""
+    {README_PROMPT}
+
+    README:
+
+    {raw_readme}
+    """
+    try:
+        response = client.chat(
+            model=OLLAMA_MODEL,
+            messages=[
+                {
+                    "role": "system",
+                    "content": README_PROMPT,
+                },
+                {
+                    "role": "user",
+                    "content": raw_readme,
+                },
+            ],
+        )
+        return response["message"]["content"]
+    
+    except (RuntimeError, ValueError, KeyError, TypeError, json.JSONDecodeError):
+        return {
+            "readme": raw_readme,
+            "warning": "The local AI service was unavailable, so the README was returned unchanged."
+        }
+
+def generate_readme(request):
+    return improve_readme(request)
