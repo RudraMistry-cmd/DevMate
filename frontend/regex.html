@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Regex++</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <main class="container">
+        <header>
+            <a href="index.html">
+                ← Back to DevMate
+            </a>
+            <h1>Regex++ | DevMate</h1>
+            <p>
+                Test, debug and learn Regular Expressions instantly.
+            </p>
+        </header>
+        <section class="input-section">
+            <h3>Input Text</h3>
+            <textarea id="inputText" placeholder="Paste or type your text here..."></textarea>
+            <h3>Regular Expression</h3>
+            <input type="text" id="regexPattern" placeholder="Example: \d+">
+            <h3>Regex Flags</h3>
+            <div class="flags">
+                <label>
+                    <input type="checkbox" id="flagGlobal">
+                    Global (g)
+                </label>
+                <label>
+                    <input type="checkbox" id="flagIgnoreCase">
+                    Ignore Case (i)
+                </label>
+                <label>
+                    <input type="checkbox" id="flagMultiLine">
+                    Multiline (m)
+                </label>
+            </div>
+            <button id="matchBtn" onclick="findMatches()">
+                Find Matches
+            </button>
+        </section>
+        <section class="output-section">
+            <h3>Results</h3>
+            <div id="results">
+                <p>
+                    Your results will appear here.
+                </p>
+            </div>
+        </section>
+    </main>
+    <script src="regex.js"></script>
+</body>
+</html>

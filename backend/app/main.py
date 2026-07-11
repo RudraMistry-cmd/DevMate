@@ -4,10 +4,12 @@ from app.services.ollama_service import optimize_prompt
 from app.models.prompts_model import PromptRequest
 from app.routes.regex_routes import router as regex_router
 from app.routes.readme_routes import router as readme_router
+from app.routes.api_routes import router as api_router
 
 app = FastAPI()
 app.include_router(regex_router)
 app.include_router(readme_router)
+app.include_router(api_router)
 
 app.add_middleware(
     CORSMiddleware,
