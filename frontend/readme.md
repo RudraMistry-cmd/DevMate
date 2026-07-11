@@ -21,15 +21,32 @@ An AI-powered prompt optimization tool built using FastAPI, JavaScript and Ollam
 
 ## Run
 
-Backend
+### Backend
+
+1. Open the backend folder.
+2. Install dependencies:
+
+```bash
+pip install -r requirements.txt
+```
+
+3. Start Ollama and make sure the model is available. The default model is `qwen2.5:7b`.
+4. Start the backend:
 
 ```bash
 uvicorn app.main:app --reload
 ```
 
-Frontend
+If needed, override the defaults:
 
-Open with Live Server.
+```bash
+$env:OLLAMA_URL="http://localhost:11434"
+$env:OLLAMA_MODEL="qwen2.5:7b"
+```
+
+### Frontend
+
+Open the frontend folder with Live Server or any simple static server.
 
 ## Future
 

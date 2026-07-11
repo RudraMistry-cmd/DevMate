@@ -2,8 +2,10 @@ from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
 from app.services.ollama_service import optimize_prompt
 from app.models.prompts_model import PromptRequest
+from app.routes.regex_routes import router as regex_router
 
 app = FastAPI()
+app.include_router(regex_router)
 
 app.add_middleware(
     CORSMiddleware,

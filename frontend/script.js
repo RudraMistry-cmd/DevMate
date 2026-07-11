@@ -7,9 +7,10 @@ function optimizePrompt(){
     const optimizeBtn = document.getElementById("optimizeBtn");
 
     optimizeBtn.disabled = true;
+    optimizeBtn.style.cursor = "not-allowed";
     optimizeBtn.textContent = "Optimizing...";
 
-    if(userPrompt != "" && category != "Select your Category"){
+    if(userPrompt.trim() != "" && category != "Select your Category"){
         fetch("http://127.0.0.1:8000/optimize", {
             method: "POST",
             headers: {
@@ -36,6 +37,7 @@ function optimizePrompt(){
             // 👇 Move these HERE
             optimizeBtn.disabled = false;
             optimizeBtn.textContent = "Optimize Prompt";
+            optimizeBtn.style.cursor = "pointer";
 
         })
         .catch(error => {
@@ -47,6 +49,7 @@ function optimizePrompt(){
             // 👇 And also HERE
             optimizeBtn.disabled = false;
             optimizeBtn.textContent = "Optimize Prompt";
+            optimizeBtn.style.cursor = "pointer";
 
         });
 
