@@ -41,7 +41,7 @@ subprocess.Popen(
 
 time.sleep(2)
 
-url = "http://127.0.0.1:8000"
+url = f"http://{local_ip}:8000"
 webbrowser.open(url)
 
 print()

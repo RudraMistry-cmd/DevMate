@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>DevMate</title>
-    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="/css/styles.css">
 </head>
 <body>
     <main class="container">
@@ -12,24 +12,37 @@
             <h1>DevMate</h1>
             <p>AI Developer Toolkit</p>
         </header>
-
+        <div class="search-section">
+            <input
+                type="text"
+                id="searchInput"
+                placeholder="Search utilities..."
+            >
+            <p id="noResults" style="display:none;">
+                No utility found.
+            </p>
+        </div>
         <section class="input-section">
             <h2>Featured</h2>
-            <div>
-                <a href="/prompt"><h3>Prompt++</h3></a>
-                <p>Optimize prompts for any AI model</p>
+            <div class="utility-card" data-name="prompt">
+                <a href="/prompt">
+                    <h2>🧠 Prompt++</h2>
+                </a>
             </div>
-            <div>
-                <a href="/regex"><h3>Regex++</h3></a>
-                <p>Test and debug regular expressions</p>
+            <div class="utility-card" data-name="regex">
+                <a href="/regex">
+                    <h2>🔍 Regex++</h2>
+                </a>
             </div>
-            <div>
-                <a href="/readme"><h3>Readme++</h3></a>
-                <p>Generate professional README files</p>
+            <div class="utility-card" data-name="readme">
+                <a href="/readme">
+                    <h2>📄 Readme++</h2>
+                </a>
             </div>
-            <div>
-                <a href="/api-tool"><h3>API++</h3></a>
-                <p>Test REST APIs with formatted responses</p>
+            <div class="utility-card" data-name="api">
+                <a href="/api-tool">
+                    <h2>🌐 API++</h2>
+                </a>
             </div>
         </section>
 
@@ -43,5 +56,6 @@
             <p>...</p>
         </section>
     </main>
+    <script src="/js/index.js"></script>
 </body>
 </html>
