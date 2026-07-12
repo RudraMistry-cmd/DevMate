@@ -60,7 +60,7 @@ function generateReadme() {
     generateBtn.style.cursor = 'not-allowed';
     document.getElementById('output').value = 'Generating README...';
 
-    fetch('http://127.0.0.1:8000/readme', {
+    fetch('/readme', {
         method: 'POST',
         headers: {
             'Content-Type': 'application/json'

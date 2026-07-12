@@ -19,7 +19,7 @@ function optimizePrompt(){
         return;
     }
 
-    fetch("http://127.0.0.1:8000/optimize", {
+    fetch("/prompt", {
         method: "POST",
         headers: {
             "Content-Type": "application/json"

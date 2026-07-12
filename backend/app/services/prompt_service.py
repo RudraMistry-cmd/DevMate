@@ -37,5 +37,5 @@ def optimize_prompt(user_prompt, category):
         if not isinstance(parsed, dict):
             raise ValueError("Model response was not a JSON object")
         return parsed
-    except (RuntimeError, ValueError, KeyError, TypeError, json.JSONDecodeError):
+    except (ConnectionError, RuntimeError, ValueError, KeyError, TypeError, json.JSONDecodeError):
         return _fallback_result(user_prompt)
