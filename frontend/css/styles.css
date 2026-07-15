@@ -11,46 +11,54 @@
     BODY
 =================================*/
 body{
-    font-family: Arial, Helvetica, sans-serif;
-    background: #f4f6f8;
-    color: #222;
+    font-family: Inter, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+    background: linear-gradient(180deg, #f7f9fc 0%, #edf2f8 100%);
+    color: #111827;
 }
 
 /*=================================
     CONTAINER
 =================================*/
 .container{
-    max-width: 900px;
+    max-width: 980px;
     margin: 40px auto;
-    padding: 20px;
+    padding: 24px;
 }
 
 /*=================================
     HEADER
 =================================*/
-header{
+header,
+.page-header{
     margin-bottom: 30px;
 }
 
 body a,
-section a{
+section a,
+.back-link{
     text-decoration: none;
     color: #2563eb;
-    font-weight: bold;
+    font-weight: 600;
 }
 
-header a:hover{
+header a:hover,
+.back-link:hover{
     text-decoration: underline;
 }
 
-header h1{
-    font-size: 3rem;
+header h1,
+.page-header h1{
+    font-size: clamp(2.4rem, 2vw, 3.2rem);
     margin-top: 10px;
+    line-height: 1.05;
 }
 
-header p{
-    color: #666;
-    margin-top: 8px;
+header p,
+.page-header p{
+    color: #4b5563;
+    margin-top: 10px;
+    max-width: 760px;
+    line-height: 1.7;
 }
 
 /*=================================
@@ -114,17 +122,26 @@ textarea,
 input[type="text"],
 select {
     width: 100%;
-    padding: 15px;
+    padding: 16px 18px;
     border: 1px solid #d1d5db;
-    border-radius: 12px;
+    border-radius: 14px;
     font-size: 15px;
     font-family: inherit;
     background: #fafbfc;
+    transition: border-color 0.2s ease, box-shadow 0.2s ease;
 }
 
 textarea {
     resize: vertical;
     min-height: 220px;
+}
+
+textarea:focus,
+input[type="text"]:focus,
+select:focus {
+    outline: none;
+    border-color: #2563eb;
+    box-shadow: 0 0 0 4px rgba(37, 99, 235, 0.08);
 }
 
 select {
@@ -155,6 +172,12 @@ button:active{
     transform: translateY(0);
 }
 
+button:disabled {
+    background: #94a3b8;
+    cursor: not-allowed;
+    box-shadow: none;
+}
+
 .button-row{
     margin-top: 16px;
     display: flex;
@@ -176,8 +199,21 @@ textarea{
 
 input[type="text"]{
     width: 100%;
-    padding: 12px;
+    padding: 15px;
     font-size: 16px;
-    border: 1px solid #ccc;
-    border-radius: 10px;
+    border: 1px solid #d1d5db;
+    border-radius: 12px;
+    background: #fafbfc;
+}
+
+.response-box {
+    width: 100%;
+    min-height: 260px;
+    padding: 18px;
+    border: 1px solid #d1d5db;
+    border-radius: 14px;
+    background: #f8fafc;
+    white-space: pre-wrap;
+    word-wrap: break-word;
+    overflow-x: auto;
 }
