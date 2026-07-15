@@ -1,0 +1,44 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JSON++ | DevMate</title>
+    <link rel="stylesheet" href="/css/styles.css">
+</head>
+<body>
+    <main class="container">
+        <header>
+            <a href="/">← Back</a>
+            <h1>JSON++</h1>
+            <p>Format, validate, and minify JSON.</p>
+        </header>
+
+        <section class="input-section">
+            <h2>Description</h2>
+            <p>Paste JSON in the input box below, then choose an action to format, validate, or minify it.</p>
+
+            <h2>Input</h2>
+            <textarea id="jsonInput" rows="14" placeholder='{
+"name": "DevMate",
+"tools": ["Prompt++", "Regex++"]
+}'></textarea>
+
+            <div style="margin-top: 16px; display: flex; flex-wrap: wrap; gap: 10px;">
+                <button id="formatBtn">Format</button>
+                <button id="minifyBtn">Minify</button>
+                <button id="validateBtn">Validate</button>
+                <button id="copyBtn">Copy</button>
+                <button id="clearBtn">Clear</button>
+            </div>
+        </section>
+
+        <section class="output-section">
+            <h2>Output</h2>
+            <textarea id="jsonOutput" rows="14" placeholder="Formatted JSON will appear here"></textarea>
+        </section>
+    </main>
+
+    <script src="/js/json.js"></script>
+</body>
+</html>

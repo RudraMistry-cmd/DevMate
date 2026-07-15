@@ -5,12 +5,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>DevMate</title>
     <link rel="stylesheet" href="/css/styles.css">
+    <link rel="stylesheet" href="/css/index.css">
 </head>
 <body>
     <main class="container">
         <header>
             <h1>DevMate</h1>
             <p>AI Developer Toolkit</p>
+            <div id="utilityStats"></div>
         </header>
         <div class="search-section">
             <input
@@ -22,40 +24,25 @@
                 No utility found.
             </p>
         </div>
+        <div class="input-section" id="recentSection">
+            <h2>🕒 Recently Used</h2>
+            <div id="recentContainer"></div>
+        </div>
+        <div class="input-section" id="favoritesSection">
+            <h2>⭐ Favorites</h2>
+            <div id="favoritesContainer"></div>
+        </div>
+
         <section class="input-section">
             <h2>Featured</h2>
-            <div class="utility-card" data-name="prompt">
-                <a href="/prompt">
-                    <h2>🧠 Prompt++</h2>
-                </a>
-            </div>
-            <div class="utility-card" data-name="regex">
-                <a href="/regex">
-                    <h2>🔍 Regex++</h2>
-                </a>
-            </div>
-            <div class="utility-card" data-name="readme">
-                <a href="/readme">
-                    <h2>📄 Readme++</h2>
-                </a>
-            </div>
-            <div class="utility-card" data-name="api">
-                <a href="/api-tool">
-                    <h2>🌐 API++</h2>
-                </a>
-            </div>
+            <div id="availableContainer"></div>
         </section>
-
         <section class="output-section">
             <h2>Coming Soon</h2>
-            <p>SQL++</p>
-            <p>JWT++</p>
-            <p>Docker++</p>
-            <p>JSON++</p>
-            <p>Git++</p>
-            <p>...</p>
+            <div id="comingSoonContainer"></div>
         </section>
     </main>
+    <script src="/js/utilities.js"></script>
     <script src="/js/index.js"></script>
 </body>
 </html>
