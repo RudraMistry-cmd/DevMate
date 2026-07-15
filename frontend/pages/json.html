@@ -8,23 +8,20 @@
 </head>
 <body>
     <main class="container">
-        <header>
-            <a href="/">← Back</a>
-            <h1>JSON++</h1>
-            <p>Format, validate, and minify JSON.</p>
+        <header class="page-header">
+            <a class="back-link" href="/">← Back to DevMate</a>
+            <h1>JSON++ | DevMate</h1>
+            <p>Format, validate, and minify JSON quickly and reliably.</p>
         </header>
 
         <section class="input-section">
-            <h2>Description</h2>
-            <p>Paste JSON in the input box below, then choose an action to format, validate, or minify it.</p>
-
             <h2>Input</h2>
             <textarea id="jsonInput" rows="14" placeholder='{
-"name": "DevMate",
-"tools": ["Prompt++", "Regex++"]
+  "name": "DevMate",
+  "tools": ["Prompt++", "Regex++"]
 }'></textarea>
 
-            <div style="margin-top: 16px; display: flex; flex-wrap: wrap; gap: 10px;">
+            <div class="button-row">
                 <button id="formatBtn">Format</button>
                 <button id="minifyBtn">Minify</button>
                 <button id="validateBtn">Validate</button>

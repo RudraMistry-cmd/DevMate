@@ -3,51 +3,64 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Readme++</title>
-    <link rel="stylesheet" href="..\css\styles.css">
+    <title>Readme++ | DevMate</title>
+    <link rel="stylesheet" href="/css/styles.css">
 </head>
 <body>
     <main class="container">
-        <header>
-            <a href="/">← Back to DevMate</a>
+        <header class="page-header">
+            <a class="back-link" href="/">← Back to DevMate</a>
             <h1>Readme++ | DevMate</h1>
             <p>Create a clean project README structure in seconds.</p>
         </header>
 
         <section class="input-section">
-            <h3>Project Name</h3>
-            <input type="text" id="projectName" placeholder="Enter project name">
-
-            <h3>Description</h3>
-            <textarea id="description" placeholder="Describe your project"></textarea>
-
-            <h3>Features</h3>
-            <textarea id="features" placeholder="List key features"></textarea>
-
-            <h3>Tech Stack</h3>
-            <textarea id="techStack" placeholder="List technologies used"></textarea>
-
-            <h3>Installation</h3>
-            <textarea id="installation" placeholder="Add installation steps"></textarea>
-
-            <h3>Usage</h3>
-            <textarea id="usage" placeholder="Explain how to use it"></textarea>
-
-            <h3>Future Improvements</h3>
-            <textarea id="futureImprovements" placeholder="Mention future enhancements"></textarea>
-
-            <h3>License</h3>
-            <textarea id="license" placeholder="Add license information"></textarea>
-
-            <button id="generateBtn">Generate README</button>
+            <h2>Project Information</h2>
+            <div class="field-group">
+                <label for="projectName">Project Name</label>
+                <input type="text" id="projectName" placeholder="Enter project name">
+            </div>
+            <div class="field-group">
+                <label for="description">Description</label>
+                <textarea id="description" placeholder="Describe your project"></textarea>
+            </div>
+            <div class="field-group">
+                <label for="features">Features</label>
+                <textarea id="features" placeholder="List key features"></textarea>
+            </div>
+            <div class="field-group">
+                <label for="techStack">Tech Stack</label>
+                <textarea id="techStack" placeholder="List technologies used"></textarea>
+            </div>
+            <div class="field-group">
+                <label for="installation">Installation</label>
+                <textarea id="installation" placeholder="Add installation steps"></textarea>
+            </div>
+            <div class="field-group">
+                <label for="usage">Usage</label>
+                <textarea id="usage" placeholder="Explain how to use it"></textarea>
+            </div>
+            <div class="field-group">
+                <label for="futureImprovements">Future Improvements</label>
+                <textarea id="futureImprovements" placeholder="Mention future enhancements"></textarea>
+            </div>
+            <div class="field-group">
+                <label for="license">License</label>
+                <textarea id="license" placeholder="Add license information"></textarea>
+            </div>
+            <div class="button-row">
+                <button id="generateBtn">Generate README</button>
+            </div>
         </section>
 
         <section class="output-section">
-            <h3>Output</h3>
+            <h2>Output</h2>
             <textarea id="output" readonly placeholder="Generated README will appear here..."></textarea>
-            <button id="copyBtn">Copy</button>
+            <div class="button-row">
+                <button id="copyBtn">Copy</button>
+            </div>
         </section>
     </main>
-    <script src="..\js\readme.js"></script>
+    <script src="/js/readme.js"></script>
 </body>
 </html>

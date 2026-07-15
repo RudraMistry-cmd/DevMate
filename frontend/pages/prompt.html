@@ -3,23 +3,22 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Prompt ++</title>
-    <link rel="stylesheet" href="..\css\styles.css">
+    <title>Prompt++ | DevMate</title>
+    <link rel="stylesheet" href="/css/styles.css">
 </head>
 <body>
     <main class="container">
-        <header>
-            <a href="/"><h3>← Back to DevMate</h3></a>
-            <h1>Prompt ++ | DevMate</h1>
-            <p>
-                Optimize prompts using your local AI model.
-            </p>
+        <header class="page-header">
+            <a class="back-link" href="/">← Back to DevMate</a>
+            <h1>Prompt++ | DevMate</h1>
+            <p>Optimize prompts using your local AI model.</p>
         </header>
+
         <section class="input-section">
-            <h3>Enter your prompt: </h3>
+            <h2>Enter your prompt</h2>
             <textarea id="userPrompt" placeholder="Describe what you want AI to help you with..."></textarea>
-            <div>
-                <h3>Category: </h3>
+            <div class="field-group">
+                <label for="category">Category</label>
                 <select id="category">
                     <option selected>Select your Category</option>
                     <option>General</option>
@@ -34,18 +33,20 @@
                     <option>Business</option>
                 </select>
             </div>
-            <div>
+            <div class="button-row">
                 <button onclick="optimizePrompt()" id="optimizeBtn">Optimize Prompt</button>
             </div>
         </section>
+
         <section class="output-section">
-            <h3>Optimized Prompt: </h3>
+            <h2>Optimized Prompt</h2>
             <textarea id="optimizedPrompt" placeholder="Your optimized prompt will appear here..." readonly></textarea>
-            <div></div>
-            <h3>Changes Made</h3>
-            <div id="changes"></div>
+            <div class="field-group">
+                <h3>Changes Made</h3>
+                <div id="changes"></div>
+            </div>
         </section>
     </main>
-    <script src="..\js\prompt.js"></script>
+    <script src="/js/prompt.js"></script>
 </body>
 </html>

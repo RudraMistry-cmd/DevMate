@@ -3,53 +3,49 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Regex++</title>
-    <link rel="stylesheet" href="..\css\styles.css">
+    <title>Regex++ | DevMate</title>
+    <link rel="stylesheet" href="/css/styles.css">
 </head>
 <body>
     <main class="container">
-        <header>
-            <a href="/">
-                ← Back to DevMate
-            </a>
+        <header class="page-header">
+            <a class="back-link" href="/">← Back to DevMate</a>
             <h1>Regex++ | DevMate</h1>
-            <p>
-                Test, debug and learn Regular Expressions instantly.
-            </p>
+            <p>Test, debug and learn Regular Expressions instantly.</p>
         </header>
+
         <section class="input-section">
-            <h3>Input Text</h3>
-            <textarea id="inputText" placeholder="Paste or type your text here..."></textarea>
-            <h3>Regular Expression</h3>
-            <input type="text" id="regexPattern" placeholder="Example: \d+">
-            <h3>Regex Flags</h3>
-            <div class="flags">
-                <label>
-                    <input type="checkbox" id="flagGlobal">
-                    Global (g)
-                </label>
-                <label>
-                    <input type="checkbox" id="flagIgnoreCase">
-                    Ignore Case (i)
-                </label>
-                <label>
-                    <input type="checkbox" id="flagMultiLine">
-                    Multiline (m)
-                </label>
+            <div class="field-group">
+                <label for="inputText">Input Text</label>
+                <textarea id="inputText" placeholder="Paste or type your text here..."></textarea>
             </div>
-            <button id="matchBtn" onclick="findMatches()">
-                Find Matches
-            </button>
+
+            <div class="field-group">
+                <label for="regexPattern">Regular Expression</label>
+                <input type="text" id="regexPattern" placeholder="Example: \d+">
+            </div>
+
+            <div class="field-group">
+                <label>Regex Flags</label>
+                <div class="flags">
+                    <label><input type="checkbox" id="flagGlobal"> Global (g)</label>
+                    <label><input type="checkbox" id="flagIgnoreCase"> Ignore Case (i)</label>
+                    <label><input type="checkbox" id="flagMultiLine"> Multiline (m)</label>
+                </div>
+            </div>
+
+            <div class="button-row">
+                <button id="matchBtn" onclick="findMatches()">Find Matches</button>
+            </div>
         </section>
+
         <section class="output-section">
-            <h3>Results</h3>
+            <h2>Results</h2>
             <div id="results">
-                <p>
-                    Your results will appear here.
-                </p>
+                <p>Your results will appear here.</p>
             </div>
         </section>
     </main>
-    <script src="..\js\regex.js"></script>
+    <script src="/js/regex.js"></script>
 </body>
 </html>
